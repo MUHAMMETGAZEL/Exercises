@@ -1,0 +1,10 @@
+r
+# SQLite veritabanı bağlantısını kur
+library(RSQLite)
+db <- dbConnect(SQLite(), dbname = "Vize_Q2_170401085_Zakaria_aljamous.sqlite")
+
+# Verileri SQLite veritabanına yaz
+dbWriteTable(db, "EnergyUsage", energy_data_frame)
+
+# Bağlantıyı kapat
+dbDisconnect(db)
